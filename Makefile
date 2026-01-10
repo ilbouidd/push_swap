@@ -5,19 +5,21 @@ SRCS =  parsing.c   		\
 		rotate.c    		\
 		reverse_rotate.c 	\
 		push.c      		\
-		tri_three.c 		\
+		sort_three.c 		\
 		put_index.c 		\
 		position.c  		\
 		find_target.c 		\
 		count_number.c 		\
 		put_first.c 		\
-		tri_all.c   		\
+		sort_all.c   		\
+		sort_two.c			\
+		utils.c				
 
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g -O0
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = push_swap
 

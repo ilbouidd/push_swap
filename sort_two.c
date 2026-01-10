@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_number.c                                     :+:      :+:    :+:   */
+/*   tri_two.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 11:00:15 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:41:13 by ilbouidd         ###   ########.fr       */
+/*   Created: 2026/01/03 11:43:56 by ilbouidd          #+#    #+#             */
+/*   Updated: 2026/01/08 18:27:35 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	count_number(t_stack **stack_a)
+void	sort_two(t_stack **stack_a)
 {
-	t_stack	*tmp;
+	int first;
+	int second;
 
-	tmp = (*stack_a);
-	position_in_stack(tmp);
-	while (tmp)
-	{
-		if (tmp->position == 1)
-		{
-			
-		}
-		tmp->nb_coup = tmp->index + tmp->target->index;
-		tmp = tmp->next;
-	}
-}
-
-void	print_count_n(t_stack *stack)
-{
-	t_stack *tmp;
-
-	tmp = stack;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->nb_coup);
-		tmp = tmp->next;
-	}
-	ft_printf("     count lines");
+	first = (*stack_a)->value;
+	second = (*stack_a)->next->value;
+	if (first > second)
+		swap_a(stack_a);
 }

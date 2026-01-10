@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 01:38:11 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/20 12:14:48 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/10 14:52:05 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,20 +39,6 @@ t_stack	*ft_addfront_stack(t_stack *stack, int n)
 	new->value = n;
 	new->next = stack;
 	return (new);
-}
-
-void	ft_stackclear(t_stack **lst)
-{
-	t_stack	*tmp;
-
-	if (!lst || !*lst)
-		return ;
-	while (*lst)
-	{
-		tmp = (*lst)->next;
-		free(*lst);
-		*lst = tmp;
-	}
 }
 
 t_stack	*create_stack(t_stack *stack, int *tab, int ac)

@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_number.c                                     :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 11:00:15 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:41:13 by ilbouidd         ###   ########.fr       */
+/*   Created: 2026/01/04 13:28:54 by ilbouidd          #+#    #+#             */
+/*   Updated: 2026/01/04 13:41:14 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	count_number(t_stack **stack_a)
+long	ft_atol(const char *nptr)
 {
-	t_stack	*tmp;
+	size_t	i;
+	long	sign;
+	long	res;
 
-	tmp = (*stack_a);
-	position_in_stack(tmp);
-	while (tmp)
+	i = 0;
+	sign = 1;
+	res = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		if (tmp->position == 1)
-		{
-			
-		}
-		tmp->nb_coup = tmp->index + tmp->target->index;
-		tmp = tmp->next;
+		if (nptr[i] == '-')
+			sign = sign * (-1);
+		i++;
 	}
-}
-
-void	print_count_n(t_stack *stack)
-{
-	t_stack *tmp;
-
-	tmp = stack;
-	while (tmp)
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		ft_printf("%d ", tmp->nb_coup);
-		tmp = tmp->next;
+		res = res * 10 + nptr[i] - 48;
+		i++;
 	}
-	ft_printf("     count lines");
+	return (sign * res);
 }

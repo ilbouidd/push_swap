@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/28 18:38:12 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:30:07 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int					ft_errors(char **av);
 int					*create_tab(int ac, char **av);
 t_stack				*ft_addfront_stack(t_stack *stack, int n);
 t_stack				*create_stack(t_stack *stack, int *tab, int ac);
-void				ft_stackclear(t_stack **lst);
 t_stack				*rotate(t_stack *stack);
 void				rotate_a(t_stack **stack_a);
 void				rotate_b(t_stack **stack_b);
@@ -49,7 +48,7 @@ void				push(t_stack **stack_src, t_stack **stack_dst);
 void				push_a(t_stack **stack_a, t_stack **stack_b);
 void				push_b(t_stack **stack_a, t_stack **stack_b);
 void				push_three(t_stack **stack_a, t_stack **stack_b);
-void				tri_three(t_stack **stack_a, t_stack **stack_b);
+void				sort_three(t_stack **stack_a, t_stack **stack_b);
 void				print_index(t_stack *stack);
 void				put_index(t_stack **stack_a, t_stack **stack_b);
 int					stack_len(t_stack *stack);
@@ -60,10 +59,16 @@ void				print_target(t_stack *stack);
 void				print_count_n(t_stack *stack);
 long				find_smallest_nc(t_stack *stack_a);
 void				put_first(t_stack **stack_a, t_stack **stack_b);
-void				tri_all(t_stack **stack_a, t_stack **stack_b);
+void				sort_all(t_stack **stack_a, t_stack **stack_b);
 long				find_smallest_value(t_stack *stack_b);
-void				tri_all_second(int small_value, t_stack **stack_a,
+void				sort_all_second(int small_value, t_stack **stack_a,
 						t_stack **stack_b);
 long				find_highest_value(t_stack *stack_b);
+void				sort_two(t_stack **stack_a);
+void				sort_just_three(t_stack **stack_a);
+void				sort_just_three_second(t_stack **stack_b, int first,
+						int second, int third);
+void				free_stack(t_stack *stack);
+int					second_part(t_stack *stack_a, t_stack *stack_b);
 
 #endif

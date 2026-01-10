@@ -6,28 +6,28 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 07:54:23 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/28 11:44:40 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/10 15:40:20 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int stack_len(t_stack *stack)
+int	stack_len(t_stack *stack)
 {
-    int i;
+	int		i;
 	t_stack	*tmp;
 
 	i = 0;
-    tmp = stack;
+	tmp = stack;
 	while (tmp)
 	{
 		tmp = tmp->next;
-        i++;
+		i++;
 	}
-    return (i);
+	return (i);
 }
 
-void	position_in_stack(t_stack *stack)
+int	position_in_stack(t_stack *stack)
 {
 	int	size;
 	int	mid;

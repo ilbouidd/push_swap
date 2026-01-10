@@ -6,32 +6,32 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 22:35:37 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/22 12:22:08 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/03 11:47:20 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    push(t_stack **stack_src, t_stack **stack_dst)
+void	push(t_stack **stack_src, t_stack **stack_dst)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    // if (!(*stack_src) || !(*stack_dst))
-    //     return;
-    tmp = *stack_src;
-    *stack_src = (*stack_src)->next;
-    tmp->next = *stack_dst;
-    *stack_dst = tmp;
+	// if (!(*stack_src) || !(*stack_dst))
+	//     return ;
+	tmp = *stack_src;
+	*stack_src = (*stack_src)->next;
+	tmp->next = *stack_dst;
+	*stack_dst = tmp;
 }
 
-void    push_a(t_stack **stack_a, t_stack **stack_b)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
-    push(stack_b, stack_a);
-    ft_printf("pa\n");
+	push(stack_b, stack_a);
+	ft_printf("pa\n");
 }
 
-void    push_b(t_stack **stack_a, t_stack **stack_b)
+void	push_b(t_stack **stack_a, t_stack **stack_b)
 {
-    push(stack_a, stack_b);
-    ft_printf("pb\n");
+	push(stack_a, stack_b);
+	ft_printf("pb\n");
 }
