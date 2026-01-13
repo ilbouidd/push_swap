@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/13 03:07:24 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 03:10:36 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	int				nb_coup;
+	int				position;
 	struct s_stack	*next;
 	struct s_stack	*target;
 }					t_stack;
