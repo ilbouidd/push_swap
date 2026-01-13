@@ -7,7 +7,6 @@ SRCS =  parsing.c   		\
 		push.c      		\
 		sort_three.c 		\
 		put_index.c 		\
-		position.c  		\
 		find_target.c 		\
 		count_number.c 		\
 		put_first.c 		\

@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 12:32:09 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/12 23:07:24 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 01:34:43 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,3 +112,4 @@ void	put_first(t_stack **stack_a, t_stack **stack_b)
 		move_to_top_b(stack_b, target_b);
 	push_b(stack_a, stack_b);
  }
+ 

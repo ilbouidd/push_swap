@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:48:58 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/13 00:21:57 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 03:06:25 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,32 @@ void free_split(char **split)
         i++;
     }
     free(split);
+}
+
+int is_sorted(t_stack *stack)
+{
+    if (!stack || !stack->next)
+        return (1);
+    while (stack->next)
+    {
+        if (stack->value > stack->next->value)
+            return (0);
+        stack = stack->next;
+    }
+    return (1);
+}
+
+int	stack_len(t_stack *stack)
+{
+	int		i;
+	t_stack	*tmp;
+
+	i = 0;
+	tmp = stack;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }

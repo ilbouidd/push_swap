@@ -46,31 +46,27 @@ void	sort_three_second(t_stack **stack_b, int first, int second, int third)
 	}
 }
 
-void	sort_just_three_second(t_stack **stack_b, int first, int second,
+void	sort_just_three_second(t_stack **stack_a, int first, int second,
 		int third)
 {
-	if (first > second && second > third)
+	if (first < second && second < third)
+		return ;
+	else if (first > second && second < third && first < third)
+		swap_a(stack_a);
+	else if (first > second && second > third)
 	{
-		rotate_b(stack_b);
-		swap_b(stack_b);
+			swap_a(stack_a);
+			reverse_rotate_a(stack_a);
 	}
-	if (first > second && second < third)
+	else if (first > second && second < third && first > third)
+		rotate_a(stack_a);
+	else if (first < second && second > third && first < third)
 	{
-		if (third > first)
-			swap_b(stack_b);
-		else
-			rotate_b(stack_b);
+		swap_a(stack_a);
+		rotate_a(stack_a);
 	}
-	if (first < second && second > third)
-	{
-		if (third > first)
-		{
-			reverse_rotate_b(stack_b);
-			swap_b(stack_b);
-		}
-		else
-			reverse_rotate_b(stack_b);
-	}
+	else if (first < second && second > third && first > third)
+			reverse_rotate_a(stack_a);
 }
 
 void	sort_just_three(t_stack **stack_a)

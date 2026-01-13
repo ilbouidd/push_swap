@@ -35,30 +35,46 @@ long	calcul_moy_value(t_stack *stack)
 	return (res / i);
 }
 
-void	sort_all_second(int small_value, t_stack **stack_a, t_stack **stack_b)
+void	sort_all_second(t_stack **stack_a, t_stack **stack_b)
 {
-	while ((*stack_b)->value != small_value)
-		reverse_rotate_b(stack_b);
 	while ((*stack_b))
 		push_a(stack_a, stack_b);
 }
 
 void	sort_all(t_stack **stack_a, t_stack **stack_b)
 {
-	int	small_value;
-	int	small_value_a;
+	t_stack *tmp;
+	int	smallest;
+	int	pos;
+	int	len;
 
+	pos = 0;
 	sort_three(stack_a, stack_b);
-	while (stack_len(*stack_a) > 3)
+	while (stack_len(*stack_a))
 	{
 		put_index(stack_a, stack_b);
 		find_target((*stack_a), (*stack_b));
 		count_number(stack_a);
 		put_first(stack_a, stack_b);
 	}
-	small_value = find_smallest_value(*stack_b);
-	sort_all_second(small_value, stack_a, stack_b);
-	small_value_a = find_smallest_value(*stack_a);
-	while ((*stack_a)->value != small_value_a)
-		reverse_rotate_a(stack_a);
+	while ((*stack_b))
+		push_a(stack_a, stack_b);
+	tmp = (*stack_a);
+	smallest = find_smallest_value(*stack_a);
+	while (tmp && tmp->value != smallest)
+	{
+		pos++;
+		tmp = tmp->next;
+	}
+	len = stack_len(*stack_a);
+	if (pos <= len / 2)
+	{
+		while ((*stack_a)->value != smallest)
+			rotate_a(stack_a);
+	}
+	else
+	{
+		while ((*stack_a)->value != smallest)
+			reverse_rotate_a(stack_a);
+	}
 }

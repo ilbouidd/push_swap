@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/13 00:22:33 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 03:07:24 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,15 @@
 
 typedef struct s_stack
 {
-	int value; // entier
-	int index; // index dans stack
+	int				value;
+	int				index;
 	int				nb_coup;
-	// combien de coup faut t'il pour trier (index(stack_a)+ index(stack_b))
-	int position; // 1 ou 0 | 1 = position haute | 0 = position basse
 	struct s_stack	*next;
-	struct s_stack *target; // cible du noeud ou je suis
+	struct s_stack	*target;
 }					t_stack;
 
 void				print_value(t_stack *stack);
-int					is_double(char **av, int i, int nb);
+int					is_double(char **av, int i, long nb);
 int					ft_errors(char **av);
 int					*create_tab(int ac, char **av);
 t_stack				*ft_addfront_stack(t_stack *stack, int n);
@@ -61,8 +59,7 @@ long				find_smallest_nc(t_stack *stack_a);
 void				put_first(t_stack **stack_a, t_stack **stack_b);
 void				sort_all(t_stack **stack_a, t_stack **stack_b);
 long				find_smallest_value(t_stack *stack_b);
-void				sort_all_second(int small_value, t_stack **stack_a,
-						t_stack **stack_b);
+void				sort_all_second(t_stack **stack_a, t_stack **stack_b);
 long				find_highest_value(t_stack *stack_b);
 void				sort_two(t_stack **stack_a);
 void				sort_just_three(t_stack **stack_a);
@@ -73,5 +70,6 @@ int					second_part(t_stack **stack_a, t_stack **stack_b);
 long				calcul_moy_value(t_stack *stack);
 long				strlen_split(char **str);
 void				free_split(char **split);
+int					is_sorted(t_stack *stack);
 
 #endif

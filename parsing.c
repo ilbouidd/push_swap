@@ -6,15 +6,15 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:50:17 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/04 13:43:02 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 02:04:27 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_double(char **av, int i, int nb)
+int	is_double(char **av, int i, long nb)
 {
-	i = i + 1;
+	i++;
 	while (av[i])
 	{
 		if (nb == ft_atol(av[i]))
@@ -51,15 +51,15 @@ int	ft_errors(char **av)
 	int		i;
 	long	nb;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
-		if (no_cara(av[i]) == 1)
+		if (no_cara(av[i]))
 			return (1);
 		nb = ft_atol(av[i]);
 		if (nb > 2147483647 || nb < -2147483648)
 			return (1);
-		if (is_double(av, i, nb) == 1)
+		if (is_double(av, i, nb))
 			return (1);
 		i++;
 	}

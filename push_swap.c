@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:45:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/13 00:55:56 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 02:46:09 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int	main(int ac, char **av)
 	{
 		split = ft_split(av[1], ' ');
 		if (!split || !split[0])
-			return (free(split), 0);
+		{
+			free_split(split);
+			return (0);
+		}
 		if (ft_errors(split))
 		{
 			ft_printf("Error\n");
@@ -61,6 +64,8 @@ int	second_part(t_stack	**stack_a, t_stack **stack_b)
 	int len;
 
 	len = stack_len(*stack_a);
+	if (is_sorted(*stack_a) || len <= 1)
+		return(free_stack(*stack_a), 0);
 	if (len == 1)
 	{
 		free_stack(*stack_a);
@@ -70,9 +75,8 @@ int	second_part(t_stack	**stack_a, t_stack **stack_b)
 		sort_two(stack_a);
 	else if (len == 3)
 		sort_just_three(stack_a);
-	else
+	else if (len > 3)
 		sort_all(stack_a, stack_b);
-	print_value(*stack_a);
 	free_stack(*stack_a);
 	if (*stack_b)
 		free_stack(*stack_b);
