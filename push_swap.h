@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:30:07 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 00:22:33 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ void				sort_just_three(t_stack **stack_a);
 void				sort_just_three_second(t_stack **stack_b, int first,
 						int second, int third);
 void				free_stack(t_stack *stack);
-int					second_part(t_stack *stack_a, t_stack *stack_b);
+int					second_part(t_stack **stack_a, t_stack **stack_b);
+long				calcul_moy_value(t_stack *stack);
+long				strlen_split(char **str);
+void				free_split(char **split);
 
 #endif

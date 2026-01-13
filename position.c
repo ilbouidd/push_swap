@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 07:54:23 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/10 15:40:20 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/10 21:14:28 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	stack_len(t_stack *stack)
 	return (i);
 }
 
-int	position_in_stack(t_stack *stack)
+void	position_in_stack(t_stack *stack)
 {
 	int	size;
 	int	mid;

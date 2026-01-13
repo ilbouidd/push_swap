@@ -12,6 +12,29 @@
 
 #include "push_swap.h"
 
+long	calcul_moy_value(t_stack *stack)
+{
+	long	res;
+	long	i;
+	long	len;
+	t_stack *tmp;
+
+	res = 0;
+	i = 0;
+	tmp  = stack;
+	len = stack_len(tmp);
+	while (tmp)
+	{
+		res += tmp->value;
+		i++;
+		tmp = tmp->next;
+	}
+	if (i == 0)
+		return (0);
+	
+	return (res / i);
+}
+
 void	sort_all_second(int small_value, t_stack **stack_a, t_stack **stack_b)
 {
 	while ((*stack_b)->value != small_value)
@@ -26,7 +49,7 @@ void	sort_all(t_stack **stack_a, t_stack **stack_b)
 	int	small_value_a;
 
 	sort_three(stack_a, stack_b);
-	while (stack_len(*stack_a))
+	while (stack_len(*stack_a) > 3)
 	{
 		put_index(stack_a, stack_b);
 		find_target((*stack_a), (*stack_b));
@@ -36,6 +59,6 @@ void	sort_all(t_stack **stack_a, t_stack **stack_b)
 	small_value = find_smallest_value(*stack_b);
 	sort_all_second(small_value, stack_a, stack_b);
 	small_value_a = find_smallest_value(*stack_a);
-	while ((*stack_a)->value != small_value)
-		reverse_rotate_b(stack_a);
+	while ((*stack_a)->value != small_value_a)
+		reverse_rotate_a(stack_a);
 }

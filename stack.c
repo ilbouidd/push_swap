@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 01:38:11 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/10 14:52:05 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/12 23:11:38 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ t_stack	*create_stack(t_stack *stack, int *tab, int ac)
 	{
 		stack = ft_addfront_stack(stack, tab[ac - 1]);
 		if (!stack)
+		{
+			free_stack(stack);
 			return (NULL);
+		}
 		ac--;
 	}
 	return (stack);

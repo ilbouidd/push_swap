@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 13:48:58 by ilbouidd          #+#    #+#             */
-/*   Updated: 2026/01/04 13:50:13 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2026/01/13 00:21:57 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,29 @@ void    free_stack(t_stack *stack)
         free(stack);
         stack = tmp;
     }
+}
+
+long    strlen_split(char **str)
+{
+    long    i;
+
+    i = 0;
+    while (str[i])
+        i++;
+    return (i);
+}
+
+void free_split(char **split)
+{
+    int i = 0;
+
+    if (!split)
+        return;
+
+    while (split[i])
+    {
+        free(split[i]);
+        i++;
+    }
+    free(split);
 }
